@@ -1,16 +1,16 @@
 import hashlib
 
-def vigenere_decipher(encrypted_text, key):
-    decrypted_text = ""
-    key_length = len(key)
+def vigenere_decipher(cifrado, key):
+    descifrado = ""
+    key_len = len(key)
     
-    for i in range(len(encrypted_text)):
-        char = encrypted_text[i]
-        key_char = key[i % key_length]
-        decrypted_char = chr((ord(char) - ord(key_char)) % 256)
-        decrypted_text += decrypted_char
+    for i in range(len(cifrado)):
+        char = cifrado[i]
+        key_char = key[i % key_len]
+        descifrado_char = chr((ord(char) - ord(key_char)) % 256)
+        descifrado += descifrado_char
         
-    return decrypted_text
+    return descifrado
 
 # Leer el mensaje cifrado y el hash del archivo mensajeseguro.txt
 with open("mensajeseguro.txt", "r") as file:
