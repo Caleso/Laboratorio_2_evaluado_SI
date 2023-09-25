@@ -1,16 +1,16 @@
 import hashlib
 
-def vigenere_cipher(text, key):
-    encrypted_text = ""
-    key_length = len(key)
+def vigenere_cipher(texto, key):
+    cifrado = ""
+    key_len = len(key)
     
-    for i in range(len(text)):
-        char = text[i]
-        key_char = key[i % key_length]
-        encrypted_char = chr((ord(char) + ord(key_char)) % 256)
-        encrypted_text += encrypted_char
+    for i in range(len(texto)):
+        char = texto[i]
+        key_char = key[i % key_len]
+        cifrado_char = chr((ord(char) + ord(key_char)) % 256)
+        cifrado += cifrado_char
         
-    return encrypted_text
+    return cifrado
 
 # Leer el mensaje de entrada
 with open("mensajedeentrada.txt", "r") as file:
